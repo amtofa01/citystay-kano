@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CityStay Kano – Hotel Guide</title>
 <style>
-  :root {
+  :root{
     --primary:#1e3a8a;
     --accent:#2563eb;
     --bg:#f4f7fb;
     --white:#ffffff;
   }
-  *{box-sizing:border-box;margin:0;padding:0;}
+  *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#333;}
 
-  /* Navbar */
   nav{background:var(--primary);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;}
   nav h1{font-size:20px;}
   nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:bold;}
   nav a:hover{text-decoration:underline;}
 
-  /* Slideshow */
   .slideshow-container{max-width:100%;position:relative;margin:auto;overflow:hidden;}
   .slides{display:none;}
   .slides img{width:100%;height:450px;object-fit:cover;}
@@ -28,11 +26,9 @@
   @keyframes fade{from{opacity:.4}to{opacity:1}}
   .caption{position:absolute;bottom:30px;left:20px;background:rgba(0,0,0,0.5);color:#fff;padding:10px 14px;border-radius:5px;}
 
-  /* Search bar */
-  .search-container{max-width:400px;margin:20px auto;}
-  .search-container input{width:100%;padding:10px 12px;border:1px solid #ccc;border-radius:6px;font-size:15px;}
+  .controls{display:flex;justify-content:center;gap:10px;margin:20px auto;max-width:600px;}
+  .controls input, .controls select{padding:10px;border:1px solid #ccc;border-radius:6px;font-size:15px;}
 
-  /* Hotel cards */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:1100px;margin:20px auto;padding:0 20px;}
   .card{display:block;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.08);transition:transform 0.2s;text-decoration:none;color:inherit;}
   .card:hover{transform:translateY(-4px);}
@@ -42,13 +38,11 @@
   .card-content p{font-size:14px;color:#555;margin-bottom:8px;}
   .badge{display:inline-block;background:var(--accent);color:#fff;padding:6px 10px;border-radius:999px;font-size:12px;}
 
-  /* Footer */
   footer{background:var(--primary);color:#fff;text-align:center;padding:12px;font-size:14px;margin-top:20px;}
 </style>
 </head>
 <body>
 
-<!-- Navbar -->
 <nav>
   <h1>CityStay Kano</h1>
   <div>
@@ -59,106 +53,63 @@
   </div>
 </nav>
 
-<!-- Slideshow -->
 <div class="slideshow-container">
-  <div class="slides fade">
-    <img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1" alt="Bristol Palace Hotel">
-    <div class="caption">Bristol Palace Hotel Kano</div>
-  </div>
-  <div class="slides fade">
-    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" alt="Tahir Guest Palace">
-    <div class="caption">Tahir Guest Palace Kano</div>
-  </div>
-  <div class="slides fade">
-    <img src="https://images.unsplash.com/photo-1590490359683-976b7a00f66b" alt="Grand Central Hotel">
-    <div class="caption">Grand Central Hotel Kano</div>
-  </div>
-  <div class="slides fade">
-    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="R & K Guest Palace">
-    <div class="caption">R & K Guest Palace</div>
-  </div>
-  <div class="slides fade">
-    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf" alt="Prince Hotel Kano">
-    <div class="caption">Prince Hotel Kano</div>
-  </div>
+  <div class="slides fade"><img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Bristol_Palace_Hotel_Kano.jpg"><div class="caption">Bristol Palace Hotel Kano</div></div>
+  <div class="slides fade"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Tahir_Guest_Palace_Kano.jpg"><div class="caption">Tahir Guest Palace</div></div>
+  <div class="slides fade"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Grand_Central_Hotel_Kano.jpg"><div class="caption">Grand Central Hotel Kano</div></div>
 </div>
 
-<!-- Search Bar -->
-<div class="search-container">
-  <input type="text" id="hotelSearch" placeholder="Search hotels..." onkeyup="filterHotels()">
+<div class="controls">
+  <input type="text" id="hotelSearch" placeholder="Search hotels..." onkeyup="filterHotels()" />
+  <select id="sortSelect" onchange="sortHotels()">
+    <option value="default">Sort By</option>
+    <option value="rating">Rating (High to Low)</option>
+    <option value="price">Price (Low to High)</option>
+    <option value="distance">Distance (Near to Far)</option>
+  </select>
 </div>
 
-<!-- Hotel Cards -->
 <main class="grid" id="hotelGrid">
-  <a href="https://bristolpalacehotelkano.com/" target="_blank" rel="noopener noreferrer" class="card">
-    <img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1" alt="Bristol Palace Hotel Kano">
-    <div class="card-content">
-      <h4>Bristol Palace Hotel</h4>
-      <p>Luxury hotel in GRA Kano with pool, dining, and modern rooms.</p>
-      <span class="badge">Visit Website</span>
-    </div>
+  <a href="https://bristolpalacehotelkano.com/" target="_blank" class="card" data-rating="4.8" data-price="350" data-distance="2">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Bristol_Palace_Hotel_Kano.jpg">
+    <div class="card-content"><h4>Bristol Palace Hotel</h4><p>Luxury hotel in GRA Kano.</p><span class="badge">Visit Website</span></div>
   </a>
-  <a href="https://www.tahirguestpalace.com/" target="_blank" rel="noopener noreferrer" class="card">
-    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" alt="Tahir Guest Palace Kano">
-    <div class="card-content">
-      <h4>Tahir Guest Palace</h4>
-      <p>Elegant rooms, fine dining, and conference facilities in Nassarawa GRA.</p>
-      <span class="badge">Visit Website</span>
-    </div>
+  <a href="https://www.tahirguestpalace.com/" target="_blank" class="card" data-rating="4.5" data-price="300" data-distance="3">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Tahir_Guest_Palace_Kano.jpg">
+    <div class="card-content"><h4>Tahir Guest Palace</h4><p>Elegant rooms in Nassarawa GRA.</p><span class="badge">Visit Website</span></div>
   </a>
-  <a href="https://grandcentralhotelkano.com/" target="_blank" rel="noopener noreferrer" class="card">
-    <img src="https://images.unsplash.com/photo-1590490359683-976b7a00f66b" alt="Grand Central Hotel Kano">
-    <div class="card-content">
-      <h4>Grand Central Hotel</h4>
-      <p>Modern hotel in the city center with great amenities for business stays.</p>
-      <span class="badge">Visit Website</span>
-    </div>
+  <a href="https://grandcentralhotelkano.com/" target="_blank" class="card" data-rating="4.2" data-price="250" data-distance="1">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Grand_Central_Hotel_Kano.jpg">
+    <div class="card-content"><h4>Grand Central Hotel</h4><p>Modern hotel in the city center.</p><span class="badge">Visit Website</span></div>
   </a>
-  <a href="https://www.booking.com/hotel/ng/r-amp-k-guest-palace.en-gb.html" target="_blank" rel="noopener noreferrer" class="card">
-    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="R & K Guest Palace Kano">
-    <div class="card-content">
-      <h4>R &amp; K Guest Palace</h4>
-      <p>Comfortable rooms and convenient location for travelers.</p>
-      <span class="badge">View on Booking</span>
-    </div>
+  <a href="https://www.booking.com/hotel/ng/r-amp-k-guest-palace.en-gb.html" target="_blank" class="card" data-rating="4.0" data-price="200" data-distance="5">
+    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb">
+    <div class="card-content"><h4>R &amp; K Guest Palace</h4><p>Comfortable rooms and convenient location.</p><span class="badge">View on Booking</span></div>
   </a>
-  <a href="https://www.booking.com/hotel/ng/prince.en-gb.html" target="_blank" rel="noopener noreferrer" class="card">
-    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf" alt="Prince Hotel Kano">
-    <div class="card-content">
-      <h4>Prince Hotel Kano</h4>
-      <p>Peaceful setting with greenery, suitable for families and long stays.</p>
-      <span class="badge">View on Booking</span>
-    </div>
+  <a href="https://www.booking.com/hotel/ng/prince.en-gb.html" target="_blank" class="card" data-rating="3.8" data-price="150" data-distance="4">
+    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf">
+    <div class="card-content"><h4>Prince Hotel Kano</h4><p>Peaceful setting with greenery.</p><span class="badge">View on Booking</span></div>
   </a>
 </main>
 
-<!-- Footer -->
-<footer>
-  © 2025 CityStay Kano | Designed by Amat
-</footer>
+<footer>© 2025 CityStay Kano | Designed by Amat</footer>
 
-<!-- Scripts -->
 <script>
-let slideIndex = 0;
-showSlides();
-function showSlides() {
-  let slides = document.getElementsByClassName("slides");
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  slides[slideIndex-1].style.display = "block";  
-  setTimeout(showSlides, 4000);
-}
-function filterHotels() {
-  const searchValue = document.getElementById('hotelSearch').value.toLowerCase();
-  const hotels = document.querySelectorAll('#hotelGrid .card');
-  hotels.forEach(card => {
-    const text = card.innerText.toLowerCase();
-    card.style.display = text.includes(searchValue) ? '' : 'none';
-  });
+let slideIndex=0;showSlides();
+function showSlides(){let s=document.getElementsByClassName("slides");for(let i=0;i<s.length;i++){s[i].style.display="none";}slideIndex++;if(slideIndex>s.length){slideIndex=1;}s[slideIndex-1].style.display="block";setTimeout(showSlides,4000);}
+
+function filterHotels(){const val=document.getElementById('hotelSearch').value.toLowerCase();const hotels=document.querySelectorAll('#hotelGrid .card');hotels.forEach(c=>{const text=c.innerText.toLowerCase();c.style.display=text.includes(val)?'':'none';});}
+
+function sortHotels(){const sortValue=document.getElementById('sortSelect').value;const grid=document.getElementById('hotelGrid');const cards=Array.from(grid.getElementsByClassName('card'));
+cards.sort((a,b)=>{
+  if(sortValue==='rating') return b.dataset.rating - a.dataset.rating;
+  if(sortValue==='price') return a.dataset.price - b.dataset.price;
+  if(sortValue==='distance') return a.dataset.distance - b.dataset.distance;
+  return 0;
+});
+cards.forEach(card=>grid.appendChild(card));
 }
 </script>
+
 </body>
 </html>
