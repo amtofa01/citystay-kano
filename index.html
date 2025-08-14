@@ -1,81 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CityStay Kano – Welcome</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CityStay Kano – Hotel Guide</title>
 <style>
-  :root{
-    --primary:#1e3a8a; /* deep blue */
-    --accent:#2563eb;  /* bright blue */
-    --bg:#f4f7fb;      /* light background */
-    --white:#ffffff;
+  :root {
+    --primary: #1e3a8a;
+    --accent: #2563eb;
+    --bg: #f4f7fb;
+    --white: #ffffff;
   }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--primary);color:var(--white);}
-  /* Header slideshow */
-  header{position:relative;height:60vh;min-height:360px;overflow:hidden;}
-  .slides{position:absolute;inset:0;display:flex;transition:transform .6s ease-in-out;}
-  .slide{min-width:100%;height:100%;}
-  .slide img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.75);}
-  /* Overlay */
-  .overlay{
-    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;
-  }
-  h1{margin:6px 0 4px;font-size:clamp(28px,5vw,48px);}
-  .tag{opacity:.9;font-size:clamp(14px,2.5vw,18px);margin-bottom:18px}
-  .btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-  .btn{
-    display:inline-block;background:var(--white);color:var(--primary);text-decoration:none;font-weight:bold;
-    padding:12px 22px;border-radius:6px
-  }
-  .btn.alt{background:var(--accent);color:#fff}
-  .btn.ghost{background:transparent;border:2px solid #fff;color:#fff}
-  .btn:hover{opacity:.92}
-  /* Footer strip */
-  .strip{background:var(--white);color:var(--primary);padding:10px 16px;text-align:center}
+  * {box-sizing: border-box; margin: 0; padding: 0;}
+  body {font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: #333;}
+
+  /* Navbar */
+  nav {background: var(--primary); color: #fff; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between;}
+  nav h1 {font-size: 20px;}
+  nav a {color: #fff; text-decoration: none; margin-left: 20px; font-weight: bold;}
+  nav a:hover {text-decoration: underline;}
+
+  /* Slideshow */
+  .slideshow-container {max-width: 100%; position: relative; margin: auto; overflow: hidden;}
+  .slides {display: none;}
+  .slides img {width: 100%; height: 450px; object-fit: cover;}
+  .fade {animation: fade 1.5s ease-in-out;}
+  @keyframes fade {from {opacity: .4} to {opacity: 1}}
+
+  /* Caption */
+  .caption {position: absolute; bottom: 30px; left: 20px; background: rgba(0,0,0,0.5); color: #fff; padding: 10px 14px; border-radius: 5px;}
+
+  /* About Section */
+  .about {padding: 30px; max-width: 1000px; margin: auto; background: var(--white); box-shadow: 0 2px 6px rgba(0,0,0,0.05); text-align: center;}
+  .about h2 {color: var(--primary); margin-bottom: 10px;}
+  .about p {color: #555; font-size: 16px;}
+
+  /* Button */
+  .btn {display: inline-block; margin-top: 20px; background: var(--accent); color: #fff; padding: 12px 20px; text-decoration: none; border-radius: 6px;}
+  .btn:hover {background: var(--primary);}
+
+  /* Footer */
+  footer {background: var(--primary); color: #fff; text-align: center; padding: 12px; font-size: 14px; margin-top: 20px;}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="slides" id="slides">
-    <div class="slide">
-      <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/447702236.jpg" alt="Bristol Palace Hotel Kano">
-    </div>
-    <div class="slide">
-      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/84/5f/48/tahirs-guest-palace.jpg" alt="Tahir Guest Palace Kano">
-    </div>
-    <div class="slide">
-      <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/282478886.jpg" alt="R &amp; K Guest Palace Kano">
-    </div>
-    <div class="slide">
-      <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/401662540.jpg" alt="Prince Hotel Kano">
-    </div>
+<!-- Navbar -->
+<nav>
+  <h1>CityStay Kano</h1>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="hotel_guide.html">Hotels</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="login.html">Login</a>
+  </div>
+</nav>
+
+<!-- Slideshow -->
+<div class="slideshow-container">
+
+  <div class="slides fade">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Bristol_Palace_Hotel_Kano.jpg" alt="Bristol Palace">
+    <div class="caption">Bristol Palace Hotel Kano</div>
   </div>
 
-  <div class="overlay">
-    <h1>CityStay Kano</h1>
-    <div class="tag">Your trusted guide to the best hotels in Kano Metropolitan</div>
-    <div class="btns">
-      <a class="btn alt" href="hotel_guide.html">Explore Hotels</a>
-      <a class="btn" href="signup.html">Sign Up</a>
-      <a class="btn ghost" href="login.html">Login</a>
-    </div>
+  <div class="slides fade">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Tahir_Guest_Palace_Kano.jpg" alt="Tahir Guest Palace">
+    <div class="caption">Tahir Guest Palace</div>
   </div>
-</header>
 
-<div class="strip">Fast, simple, and reliable  .</div>
+  <div class="slides fade">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Grand_Central_Hotel_Kano.jpg" alt="Grand Central Hotel">
+    <div class="caption">Grand Central Hotel Kano</div>
+  </div>
 
+</div>
+
+<!-- About Section -->
+<section class="about">
+  <h2>Welcome to CityStay Kano</h2>
+  <p>Discover the best hotels in Kano Metropolitan. From luxury accommodations to budget-friendly stays, our guide helps you find the perfect place. Click below to explore our curated hotel list with direct links to official websites.</p>
+  <a href="hotel_guide.html" class="btn">Explore Hotels</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2025 CityStay Kano | Designed for FYP
+</footer>
+
+<!-- Slideshow Script -->
 <script>
-  // Simple slider
-  const track = document.getElementById('slides');
-  const total = track.children.length;
-  let i = 0;
-  setInterval(()=> {
-    i = (i + 1) % total;
-    track.style.transform = `translateX(-${i*100}%)`;
-  }, 3500);
+let slideIndex = 0;
+showSlides();
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("slides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 4000); // Change every 4 seconds
+}
 </script>
+
 </body>
 </html>
