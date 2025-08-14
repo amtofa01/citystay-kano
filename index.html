@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CityStay Kano – Home</title>
 <style>
-  :root {
+  :root{
     --primary:#1e3a8a;
     --accent:#2563eb;
     --bg:#f4f7fb;
     --white:#ffffff;
   }
-  *{box-sizing:border-box;margin:0;padding:0;}
+  *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#333;}
 
-  /* Navbar */
   nav{background:var(--primary);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;}
   nav h1{font-size:20px;}
   nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:bold;}
   nav a:hover{text-decoration:underline;}
 
-  /* Slideshow */
   .slideshow-container{max-width:100%;position:relative;margin:auto;overflow:hidden;}
   .slides{display:none;}
   .slides img{width:100%;height:450px;object-fit:cover;}
@@ -28,18 +26,15 @@
   @keyframes fade{from{opacity:.4}to{opacity:1}}
   .caption{position:absolute;bottom:30px;left:20px;background:rgba(0,0,0,0.5);color:#fff;padding:10px 14px;border-radius:5px;}
 
-  /* View Hotels Button */
-  .cta-section{text-align:center;padding:30px;}
-  .cta-btn{background:var(--accent);color:#fff;padding:14px 28px;font-size:18px;border:none;border-radius:6px;cursor:pointer;text-decoration:none;}
-  .cta-btn:hover{background:#1e40af;}
-
-  /* Footer */
+  .view-hotels{display:block;text-align:center;margin:30px auto;}
+  .view-hotels a{background:var(--accent);color:#fff;padding:12px 25px;border-radius:6px;text-decoration:none;font-size:16px;}
+  .view-hotels a:hover{background:#1e40af;}
+  
   footer{background:var(--primary);color:#fff;text-align:center;padding:12px;font-size:14px;margin-top:20px;}
 </style>
 </head>
 <body>
 
-<!-- Navbar -->
 <nav>
   <h1>CityStay Kano</h1>
   <div>
@@ -50,41 +45,29 @@
   </div>
 </nav>
 
-<!-- Slideshow -->
 <div class="slideshow-container">
   <div class="slides fade">
-    <img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1" alt="Bristol Palace Hotel">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Bristol_Palace_Hotel_Kano.jpg" alt="Bristol Palace Hotel">
     <div class="caption">Bristol Palace Hotel Kano</div>
   </div>
   <div class="slides fade">
-    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" alt="Tahir Guest Palace">
-    <div class="caption">Tahir Guest Palace Kano</div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Tahir_Guest_Palace_Kano.jpg" alt="Tahir Guest Palace">
+    <div class="caption">Tahir Guest Palace</div>
   </div>
   <div class="slides fade">
-    <img src="https://images.unsplash.com/photo-1590490359683-976b7a00f66b" alt="Grand Central Hotel">
+    <img src="https://images.unsplash.com/photo-1582719478190-ef42f8ad3c94?auto=format&fit=crop&w=1200&q=80" alt="Grand Central Hotel">
     <div class="caption">Grand Central Hotel Kano</div>
   </div>
-  <div class="slides fade">
-    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="R & K Guest Palace">
-    <div class="caption">R & K Guest Palace</div>
-  </div>
-  <div class="slides fade">
-    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf" alt="Prince Hotel Kano">
-    <div class="caption">Prince Hotel Kano</div>
-  </div>
 </div>
 
-<!-- CTA Button -->
-<div class="cta-section">
-  <a href="hotel_guide.html" class="cta-btn">View Hotels</a>
+<div class="view-hotels">
+  <a href="hotel_guide.html">View Hotels</a>
 </div>
 
-<!-- Footer -->
 <footer>
   © 2025 CityStay Kano | Designed by Amat
 </footer>
 
-<!-- Scripts -->
 <script>
 let slideIndex = 0;
 showSlides();
@@ -99,5 +82,6 @@ function showSlides() {
   setTimeout(showSlides, 4000);
 }
 </script>
+
 </body>
 </html>
