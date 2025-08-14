@@ -1,27 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CityStay – Welcome</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CityStay Kano – Welcome</title>
 <style>
-  body { margin:0; font-family:Arial, sans-serif; background:#1e3a8a; color:white; text-align:center; }
-  .container { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; }
-  h1 { font-size:3em; margin-bottom:10px; }
-  p { font-size:1.2em; margin-bottom:20px; }
-  a.button { padding:12px 25px; background:white; color:#1e3a8a; text-decoration:none; border-radius:5px; font-weight:bold; }
-  a.button:hover { background:#93c5fd; }
+  :root{
+    --primary:#1e3a8a; /* deep blue */
+    --accent:#2563eb;  /* bright blue */
+    --bg:#f4f7fb;      /* light background */
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--primary);color:var(--white);}
+  /* Header slideshow */
+  header{position:relative;height:60vh;min-height:360px;overflow:hidden;}
+  .slides{position:absolute;inset:0;display:flex;transition:transform .6s ease-in-out;}
+  .slide{min-width:100%;height:100%;}
+  .slide img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.75);}
+  /* Overlay */
+  .overlay{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;
+  }
+  h1{margin:6px 0 4px;font-size:clamp(28px,5vw,48px);}
+  .tag{opacity:.9;font-size:clamp(14px,2.5vw,18px);margin-bottom:18px}
+  .btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .btn{
+    display:inline-block;background:var(--white);color:var(--primary);text-decoration:none;font-weight:bold;
+    padding:12px 22px;border-radius:6px
+  }
+  .btn.alt{background:var(--accent);color:#fff}
+  .btn.ghost{background:transparent;border:2px solid #fff;color:#fff}
+  .btn:hover{opacity:.92}
+  /* Footer strip */
+  .strip{background:var(--white);color:var(--primary);padding:10px 16px;text-align:center}
 </style>
 </head>
 <body>
-<div class="container">
-  <h1>Welcome to CityStay Kano</h1>
-  <p>Your trusted guide to the best hotels in Kano</p>
-  <a class="button" href="hotel_guide.html">Explore Hotels</a>
-  <p style="margin-top:15px;">
-    <a class="button" href="signup.html" style="background:#93c5fd; color:white;">Sign Up</a>
-    <a class="button" href="login.html" style="background:#2563eb; color:white;">Login</a>
-  </p>
-</div>
+
+<header>
+  <div class="slides" id="slides">
+    <div class="slide">
+      <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/447702236.jpg" alt="Bristol Palace Hotel Kano">
+    </div>
+    <div class="slide">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/84/5f/48/tahirs-guest-palace.jpg" alt="Tahir Guest Palace Kano">
+    </div>
+    <div class="slide">
+      <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/282478886.jpg" alt="R &amp; K Guest Palace Kano">
+    </div>
+    <div class="slide">
+      <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/401662540.jpg" alt="Prince Hotel Kano">
+    </div>
+  </div>
+
+  <div class="overlay">
+    <h1>CityStay Kano</h1>
+    <div class="tag">Your trusted guide to the best hotels in Kano Metropolitan</div>
+    <div class="btns">
+      <a class="btn alt" href="hotel_guide.html">Explore Hotels</a>
+      <a class="btn" href="signup.html">Sign Up</a>
+      <a class="btn ghost" href="login.html">Login</a>
+    </div>
+  </div>
+</header>
+
+<div class="strip">Fast, simple, and mobile-friendly — built for your final year project.</div>
+
+<script>
+  // Simple slider
+  const track = document.getElementById('slides');
+  const total = track.children.length;
+  let i = 0;
+  setInterval(()=> {
+    i = (i + 1) % total;
+    track.style.transform = `translateX(-${i*100}%)`;
+  }, 3500);
+</script>
 </body>
 </html>
