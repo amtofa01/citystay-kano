@@ -12,10 +12,10 @@
   header .top-links{margin-top:6px;font-size:14px}
   header a{color:#fff;text-decoration:underline}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;padding:20px;max-width:1200px;margin:0 auto}
-  .card{display:block;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,.06);text-decoration:none;color:inherit;transition:transform .18s, box-shadow .18s}
-  .card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.10)}
+  .card{display:flex;flex-direction:column;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,.06);transition:transform .18s, box-shadow .18s;text-decoration:none;color:inherit;}
+  .card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
   .card img{width:100%;height:180px;object-fit:cover;display:block}
-  .content{padding:14px}
+  .content{padding:14px;flex:1}
   .title{margin:0 0 6px;color:var(--primary);font-size:18px}
   .desc{margin:0 0 10px;color:#555;font-size:14px;line-height:1.4}
   .badge{display:inline-block;background:var(--accent);color:#fff;padding:6px 10px;border-radius:999px;font-size:12px}
@@ -35,7 +35,7 @@
 
 <main class="grid">
   <!-- 1. Bristol Palace Hotel -->
-  <a class="card" href="https://bristolpalacehotelkano.com/" target="_blank" rel="noopener">
+  <a class="card" href="https://bristolpalacehotelkano.com/" target="_blank" rel="noopener noreferrer">
     <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/447702236.jpg" alt="Bristol Palace Hotel Kano">
     <div class="content">
       <h3 class="title">Bristol Palace Hotel</h3>
@@ -45,7 +45,7 @@
   </a>
 
   <!-- 2. Tahir Guest Palace -->
-  <a class="card" href="https://www.tahirguestpalace.com/" target="_blank" rel="noopener">
+  <a class="card" href="https://www.tahirguestpalace.com/" target="_blank" rel="noopener noreferrer">
     <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/84/5f/48/tahirs-guest-palace.jpg" alt="Tahir Guest Palace Kano">
     <div class="content">
       <h3 class="title">Tahir Guest Palace</h3>
@@ -55,7 +55,7 @@
   </a>
 
   <!-- 3. Grand Central Hotel Kano -->
-  <a class="card" href="https://grandcentralhotelkano.com/" target="_blank" rel="noopener">
+  <a class="card" href="https://grandcentralhotelkano.com/" target="_blank" rel="noopener noreferrer">
     <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/df/7b/09/grand-central-hotel.jpg" alt="Grand Central Hotel Kano">
     <div class="content">
       <h3 class="title">Grand Central Hotel</h3>
@@ -65,7 +65,7 @@
   </a>
 
   <!-- 4. R & K Guest Palace -->
-  <a class="card" href="https://www.booking.com/hotel/ng/r-amp-k-guest-palace.en-gb.html" target="_blank" rel="noopener">
+  <a class="card" href="https://www.booking.com/hotel/ng/r-amp-k-guest-palace.en-gb.html" target="_blank" rel="noopener noreferrer">
     <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/282478886.jpg" alt="R &amp; K Guest Palace Kano">
     <div class="content">
       <h3 class="title">R &amp; K Guest Palace</h3>
@@ -75,7 +75,7 @@
   </a>
 
   <!-- 5. Prince Hotel Kano -->
-  <a class="card" href="https://www.booking.com/hotel/ng/prince.en-gb.html" target="_blank" rel="noopener">
+  <a class="card" href="https://www.booking.com/hotel/ng/prince.en-gb.html" target="_blank" rel="noopener noreferrer">
     <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/401662540.jpg" alt="Prince Hotel Kano">
     <div class="content">
       <h3 class="title">Prince Hotel Kano</h3>
