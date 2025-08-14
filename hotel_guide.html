@@ -84,10 +84,15 @@
 </div>
 
 <!-- Search Bar -->
-<div class="search-container">
-  <input type="text" id="hotelSearch" placeholder="Search hotels..." onkeyup="filterHotels()">
+<div class="controls">
+  <input type="text" id="hotelSearch" placeholder="Search hotels..." onkeyup="filterHotels()" />
+  <select id="sortSelect" onchange="sortHotels()">
+    <option value="default">Sort By</option>
+    <option value="rating">Rating (High to Low)</option>
+    <option value="price">Price (Low to High)</option>
+    <option value="distance">Distance (Near to Far)</option>
+  </select>
 </div>
-
 <!-- Hotel Cards -->
 <main class="grid" id="hotelGrid">
   <a href="https://bristolpalacehotelkano.com/" target="_blank" rel="noopener noreferrer" class="card">
