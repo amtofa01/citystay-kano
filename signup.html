@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sign Up – CityStay</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sign Up – CityStay Kano</title>
 <style>
-  body { font-family:Arial, sans-serif; background:#f4f7fb; display:flex; justify-content:center; align-items:center; height:100vh; }
-  .form-container { background:white; padding:30px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); width:300px; }
-  h2 { text-align:center; color:#1e3a8a; }
-  input { width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px; }
-  button { width:100%; padding:10px; background:#1e3a8a; color:white; border:none; border-radius:4px; font-weight:bold; }
-  button:hover { background:#2563eb; }
-  p { text-align:center; margin-top:10px; font-size:0.9em; }
-  a { color:#2563eb; text-decoration:none; }
+  :root{--primary:#1e3a8a;--accent:#2563eb;--bg:#f4f7fb;--white:#ffffff;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);display:flex;min-height:100vh;align-items:center;justify-content:center}
+  .card{background:#fff;width:min(420px,92vw);padding:28px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+  h2{margin:0 0 4px;color:var(--primary)}
+  p.sub{margin:0 0 18px;color:#555}
+  label{display:block;font-size:14px;margin-top:10px;color:#333}
+  input{width:100%;padding:12px 12px;margin-top:6px;border:1px solid #d9dfec;border-radius:6px;outline:none}
+  input:focus{border-color:var(--accent)}
+  button{width:100%;margin-top:14px;padding:12px 14px;border:0;border-radius:6px;background:var(--primary);color:#fff;font-weight:bold;cursor:pointer}
+  button:hover{background:#15306c}
+  .links{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+  a{color:var(--accent);text-decoration:none}
+  .top-nav{position:fixed;left:12px;top:12px}
+  .top-nav a{color:var(--primary);text-decoration:none;font-weight:bold}
 </style>
 </head>
 <body>
-<div class="form-container">
-  <h2>Create Account</h2>
-  <form action="login.html">
-    <input type="text" placeholder="Full Name" required>
-    <input type="email" placeholder="Email" required>
-    <input type="password" placeholder="Password" required>
-    <button type="submit">Sign Up</button>
-  </form>
-  <p>Already have an account? <a href="login.html">Login here</a></p>
-</div>
+  <div class="top-nav"><a href="index.html">← Back to Home</a></div>
+  <div class="card">
+    <h2>Create Account</h2>
+    <p class="sub">Join CityStay Kano to save your favourite hotels (frontend only).</p>
+    <form action="login.html" method="get">
+      <label>Full Name
+        <input type="text" required placeholder="e.g. Amina Bello" />
+      </label>
+      <label>Email
+        <input type="email" required placeholder="you@example.com" />
+      </label>
+      <label>Password
+        <input type="password" required placeholder="Create a password" />
+      </label>
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="links">
+      <span>Already have an account?</span>
+      <a href="login.html">Login</a>
+    </div>
+  </div>
 </body>
 </html>
