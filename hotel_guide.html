@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hotels in Kano – CityStay Kano</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CityStay Kano – Hotel Guide</title>
 <style>
-  :root{
+  :root {
     --primary:#1e3a8a;
     --accent:#2563eb;
     --bg:#f4f7fb;
     --white:#ffffff;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
+  *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#333;}
-  
+
   /* Navbar */
   nav{background:var(--primary);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;}
   nav h1{font-size:20px;}
   nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:bold;}
   nav a:hover{text-decoration:underline;}
-  
-  /* Header */
-  header{padding:20px;text-align:center;background:var(--white);box-shadow:0 2px 6px rgba(0,0,0,0.05);}
-  header h2{color:var(--primary);}
-  header p{color:#555;margin-top:6px;}
-  
+
+  /* Slideshow */
+  .slideshow-container{max-width:100%;position:relative;margin:auto;overflow:hidden;}
+  .slides{display:none;}
+  .slides img{width:100%;height:450px;object-fit:cover;}
+  .fade{animation:fade 1.5s ease-in-out;}
+  @keyframes fade{from{opacity:.4}to{opacity:1}}
+  .caption{position:absolute;bottom:30px;left:20px;background:rgba(0,0,0,0.5);color:#fff;padding:10px 14px;border-radius:5px;}
+
   /* Search bar */
-  .search-container{max-width:400px;margin:15px auto;}
+  .search-container{max-width:400px;margin:20px auto;}
   .search-container input{width:100%;padding:10px 12px;border:1px solid #ccc;border-radius:6px;font-size:15px;}
-  
-  /* Hotel grid */
+
+  /* Hotel cards */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:1100px;margin:20px auto;padding:0 20px;}
   .card{display:block;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.08);transition:transform 0.2s;text-decoration:none;color:inherit;}
   .card:hover{transform:translateY(-4px);}
@@ -38,7 +41,7 @@
   .card-content h4{margin-bottom:6px;color:var(--primary);}
   .card-content p{font-size:14px;color:#555;margin-bottom:8px;}
   .badge{display:inline-block;background:var(--accent);color:#fff;padding:6px 10px;border-radius:999px;font-size:12px;}
-  
+
   /* Footer */
   footer{background:var(--primary);color:#fff;text-align:center;padding:12px;font-size:14px;margin-top:20px;}
 </style>
@@ -56,50 +59,61 @@
   </div>
 </nav>
 
-<!-- Page Title -->
-<header>
-  <h2>Hotels in Kano Metropolitan</h2>
-  <p>Click on any hotel to visit its official website.</p>
-</header>
+<!-- Slideshow -->
+<div class="slideshow-container">
+  <div class="slides fade">
+    <img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1" alt="Bristol Palace Hotel">
+    <div class="caption">Bristol Palace Hotel Kano</div>
+  </div>
+  <div class="slides fade">
+    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" alt="Tahir Guest Palace">
+    <div class="caption">Tahir Guest Palace Kano</div>
+  </div>
+  <div class="slides fade">
+    <img src="https://images.unsplash.com/photo-1590490359683-976b7a00f66b" alt="Grand Central Hotel">
+    <div class="caption">Grand Central Hotel Kano</div>
+  </div>
+  <div class="slides fade">
+    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="R & K Guest Palace">
+    <div class="caption">R & K Guest Palace</div>
+  </div>
+  <div class="slides fade">
+    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf" alt="Prince Hotel Kano">
+    <div class="caption">Prince Hotel Kano</div>
+  </div>
+</div>
 
-<!-- Search -->
+<!-- Search Bar -->
 <div class="search-container">
-  <input type="text" id="hotelSearch" placeholder="Search hotels..." onkeyup="filterHotels()" />
+  <input type="text" id="hotelSearch" placeholder="Search hotels..." onkeyup="filterHotels()">
 </div>
 
 <!-- Hotel Cards -->
 <main class="grid" id="hotelGrid">
-  <!-- 1. Bristol Palace Hotel -->
   <a href="https://bristolpalacehotelkano.com/" target="_blank" rel="noopener noreferrer" class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Bristol_Palace_Hotel_Kano.jpg" alt="Bristol Palace Hotel Kano">
+    <img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1" alt="Bristol Palace Hotel Kano">
     <div class="card-content">
       <h4>Bristol Palace Hotel</h4>
       <p>Luxury hotel in GRA Kano with pool, dining, and modern rooms.</p>
       <span class="badge">Visit Website</span>
     </div>
   </a>
-
-  <!-- 2. Tahir Guest Palace -->
   <a href="https://www.tahirguestpalace.com/" target="_blank" rel="noopener noreferrer" class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Tahir_Guest_Palace_Kano.jpg" alt="Tahir Guest Palace Kano">
+    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" alt="Tahir Guest Palace Kano">
     <div class="card-content">
       <h4>Tahir Guest Palace</h4>
       <p>Elegant rooms, fine dining, and conference facilities in Nassarawa GRA.</p>
       <span class="badge">Visit Website</span>
     </div>
   </a>
-
-  <!-- 3. Grand Central Hotel Kano -->
   <a href="https://grandcentralhotelkano.com/" target="_blank" rel="noopener noreferrer" class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Grand_Central_Hotel_Kano.jpg" alt="Grand Central Hotel Kano">
+    <img src="https://images.unsplash.com/photo-1590490359683-976b7a00f66b" alt="Grand Central Hotel Kano">
     <div class="card-content">
       <h4>Grand Central Hotel</h4>
       <p>Modern hotel in the city center with great amenities for business stays.</p>
       <span class="badge">Visit Website</span>
     </div>
   </a>
-
-  <!-- 4. R & K Guest Palace -->
   <a href="https://www.booking.com/hotel/ng/r-amp-k-guest-palace.en-gb.html" target="_blank" rel="noopener noreferrer" class="card">
     <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="R & K Guest Palace Kano">
     <div class="card-content">
@@ -108,8 +122,6 @@
       <span class="badge">View on Booking</span>
     </div>
   </a>
-
-  <!-- 5. Prince Hotel Kano -->
   <a href="https://www.booking.com/hotel/ng/prince.en-gb.html" target="_blank" rel="noopener noreferrer" class="card">
     <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf" alt="Prince Hotel Kano">
     <div class="card-content">
@@ -122,21 +134,31 @@
 
 <!-- Footer -->
 <footer>
-  © 2025 CityStay Kano | Designed for FYP
+  © 2025 CityStay Kano | Designed by Amat
 </footer>
 
-<!-- Search Filter Script -->
+<!-- Scripts -->
 <script>
+let slideIndex = 0;
+showSlides();
+function showSlides() {
+  let slides = document.getElementsByClassName("slides");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 4000);
+}
 function filterHotels() {
   const searchValue = document.getElementById('hotelSearch').value.toLowerCase();
   const hotels = document.querySelectorAll('#hotelGrid .card');
-  
   hotels.forEach(card => {
     const text = card.innerText.toLowerCase();
     card.style.display = text.includes(searchValue) ? '' : 'none';
   });
 }
 </script>
-
 </body>
 </html>
