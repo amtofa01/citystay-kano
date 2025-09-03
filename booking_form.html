@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hotel Booking Form</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;margin:0;color:#333;}
+    nav{background:#1e3a8a;color:#fff;padding:14px 20px;display:flex;justify-content:space-between;}
+    nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:bold;}
+    .container{max-width:600px;margin:30px auto;padding:20px;background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+    h2{color:#1e3a8a;margin-bottom:15px;}
+    label{display:block;margin:10px 0 5px;}
+    input,select{width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:6px;}
+    .btn{display:inline-block;padding:12px 20px;background:#2563eb;color:#fff;text-decoration:none;border-radius:6px;}
+    .btn:hover{background:#1e3a8a;}
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>CityStay Kano</h1>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="hotel_guide.html">Hotels</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Booking Form</h2>
+    <form action="agreement.html" method="get">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="hotel">Select Hotel</label>
+      <select id="hotel" name="hotel" required>
+        <option>Bristol Palace Hotel</option>
+        <option>Tahir Guest Palace</option>
+        <option>Grand Central Hotel</option>
+        <option>R & K Guest Palace</option>
+        <option>Prince Hotel</option>
+      </select>
+
+      <label for="checkin">Check-in Date</label>
+      <input type="date" id="checkin" name="checkin" required>
+
+      <label for="checkout">Check-out Date</label>
+      <input type="date" id="checkout" name="checkout" required>
+
+      <button type="submit" class="btn">Proceed</button>
+    </form>
+  </div>
+</body>
+</html>
