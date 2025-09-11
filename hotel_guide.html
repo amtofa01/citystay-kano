@@ -26,7 +26,7 @@
   .sort-container select{padding:10px 12px;border:1px solid #ccc;border-radius:6px;font-size:15px;width:100%;}
 
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:1100px;margin:20px auto;padding:0 20px;}
-  .card{cursor:pointer;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.08);transition:transform 0.2s;}
+  .card{cursor:pointer;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.08);transition:transform 0.2s;text-decoration:none;color:inherit;}
   .card:hover{transform:translateY(-4px);}
   .card img{width:100%;height:180px;object-fit:cover;}
   .card-content{padding:14px;}
@@ -69,7 +69,7 @@
 </div>
 
 <main class="grid" id="hotelGrid">
-  <div class="card" onclick="toggleDetails('bristol')">
+  <div class="card" onclick="showDetails('bristol')">
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Bristol_Palace_Hotel_Kano.jpg" alt="Bristol Palace Hotel Kano">
     <div class="card-content">
       <h4>Bristol Palace Hotel</h4>
@@ -77,7 +77,7 @@
       <span class="badge">View Details</span>
     </div>
   </div>
-  <div class="card" onclick="toggleDetails('tahir')">
+  <div class="card" onclick="showDetails('tahir')">
     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Tahir_Guest_Palace_Kano.jpg" alt="Tahir Guest Palace Kano">
     <div class="card-content">
       <h4>Tahir Guest Palace</h4>
@@ -85,7 +85,7 @@
       <span class="badge">View Details</span>
     </div>
   </div>
-  <div class="card" onclick="toggleDetails('grandcentral')">
+  <div class="card" onclick="showDetails('grandcentral')">
     <img src="https://images.unsplash.com/photo-1582719478190-ef42f8ad3c94?auto=format&fit=crop&w=1200&q=80" alt="Grand Central Hotel Kano">
     <div class="card-content">
       <h4>Grand Central Hotel</h4>
@@ -93,7 +93,7 @@
       <span class="badge">View Details</span>
     </div>
   </div>
-  <div class="card" onclick="toggleDetails('rk')">
+  <div class="card" onclick="showDetails('rk')">
     <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="R & K Guest Palace Kano">
     <div class="card-content">
       <h4>R & K Guest Palace</h4>
@@ -101,7 +101,7 @@
       <span class="badge">View Details</span>
     </div>
   </div>
-  <div class="card" onclick="toggleDetails('prince')">
+  <div class="card" onclick="showDetails('prince')">
     <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf" alt="Prince Hotel Kano">
     <div class="card-content">
       <h4>Prince Hotel Kano</h4>
@@ -175,15 +175,10 @@ function sortHotels() {
   cards.forEach(card => grid.appendChild(card));
 }
 
-function toggleDetails(id) {
-  const el = document.getElementById(id);
-  if (el.style.display === "block") {
-    el.style.display = "none";
-  } else {
-    document.querySelectorAll('.details').forEach(d => d.style.display='none');
-    el.style.display = "block";
-    window.scrollTo({top: el.offsetTop - 50, behavior:'smooth'});
-  }
+function showDetails(id) {
+  document.querySelectorAll('.details').forEach(d => d.style.display='none');
+  document.getElementById(id).style.display='block';
+  window.scrollTo({top: document.getElementById(id).offsetTop - 50, behavior:'smooth'});
 }
 </script>
 
