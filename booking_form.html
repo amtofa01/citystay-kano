@@ -1,122 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CityStay Kano – Home</title>
-<style>
-  :root {
-    --primary:#1e3a8a;
-    --accent:#2563eb;
-    --bg:#f4f7fb;
-    --white:#ffffff;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#333;}
-
-  /* Navbar */
-  nav{background:var(--primary);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;}
-  nav h1{font-size:22px;font-weight:bold;}
-  nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:bold;}
-  nav a:hover{text-decoration:underline;}
-
-  /* Hero Section */
-  .hero {
-    position:relative;
-    width:100%;
-    height:85vh;
-    background:url('https://www.tahirguestpalace.com/images/slider/slide1.jpg') center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:#fff;
-  }
-  .hero-overlay {
-    position:absolute;
-    top:0;left:0;width:100%;height:100%;
-    background:rgba(0,0,0,0.5);
-  }
-  .hero-content {
-    position:relative;
-    z-index:2;
-    max-width:700px;
-  }
-  .hero h2 {font-size:40px;margin-bottom:15px;}
-  .hero p {font-size:18px;margin-bottom:25px;}
-  .cta-btn{background:var(--accent);color:#fff;padding:14px 28px;font-size:18px;border:none;border-radius:6px;cursor:pointer;text-decoration:none;}
-  .cta-btn:hover{background:#1e40af;}
-
-  /* Featured Hotels */
-  .featured {max-width:1100px;margin:50px auto;padding:0 20px;}
-  .featured h3{text-align:center;font-size:26px;color:var(--primary);margin-bottom:30px;}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-  .card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.08);transition:transform 0.2s;}
-  .card:hover{transform:translateY(-4px);}
-  .card img{width:100%;height:200px;object-fit:cover;}
-  .card-content{padding:15px;}
-  .card-content h4{color:var(--primary);margin-bottom:8px;}
-  .card-content p{font-size:14px;color:#555;}
-
-  /* Footer */
-  footer{background:var(--primary);color:#fff;text-align:center;padding:12px;font-size:14px;margin-top:40px;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hotel Booking Form</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;margin:0;color:#333;}
+    nav{background:#1e3a8a;color:#fff;padding:14px 20px;display:flex;justify-content:space-between;}
+    nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:bold;}
+    .container{max-width:600px;margin:30px auto;padding:20px;background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+    h2{color:#1e3a8a;margin-bottom:15px;}
+    label{display:block;margin:10px 0 5px;}
+    input,select{width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:6px;}
+    .btn{display:inline-block;padding:12px 20px;background:#2563eb;color:#fff;text-decoration:none;border-radius:6px;}
+    .btn:hover{background:#1e3a8a;}
+  </style>
 </head>
 <body>
-
-<!-- Navbar -->
-<nav>
-  <h1>CityStay Kano</h1>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="hotel_guide.html">Hotels</a>
-    <a href="signup.html">Sign Up</a>
-    <a href="login.html">Login</a>
-  </div>
-</nav>
-
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h2>Welcome to CityStay Kano</h2>
-    <p>Find and book the best hotels in Kano with ease and comfort.</p>
-    <a href="hotel_guide.html" class="cta-btn">Explore Hotels</a>
-  </div>
-</section>
-
-<!-- Featured Hotels -->
-<section class="featured">
-  <h3>Popular Hotels in Kano</h3>
-  <div class="grid">
-    <div class="card">
-      <img src="https://bristolpalacehotelkano.com/images/gallery/slide1.jpg" alt="Bristol Palace Hotel">
-      <div class="card-content">
-        <h4>Bristol Palace Hotel</h4>
-        <p>Luxury hotel in GRA Kano with pool, fine dining, and premium rooms.</p>
-      </div>
+  <nav>
+    <h1>CityStay Kano</h1>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="hotel_guide.html">Hotels</a>
     </div>
-    <div class="card">
-      <img src="https://www.tahirguestpalace.com/images/slider/slide2.jpg" alt="Tahir Guest Palace">
-      <div class="card-content">
-        <h4>Tahir Guest Palace</h4>
-        <p>Elegant rooms, conference halls, and top-class dining services.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://grandcentralhotelkano.com/assets/images/gallery/gallery1.jpg" alt="Grand Central Hotel">
-      <div class="card-content">
-        <h4>Grand Central Hotel</h4>
-        <p>Modern city hotel with great amenities for business and leisure.</p>
-      </div>
-    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Booking Form</h2>
+    <form action="agreement.html" method="get">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="hotel">Select Hotel</label>
+      <select id="hotel" name="hotel" required>
+        <option>Bristol Palace Hotel</option>
+        <option>Tahir Guest Palace</option>
+        <option>Grand Central Hotel</option>
+        <option>R & K Guest Palace</option>
+        <option>Prince Hotel</option>
+      </select>
+
+      <label for="checkin">Check-in Date</label>
+      <input type="date" id="checkin" name="checkin" required>
+
+      <label for="checkout">Check-out Date</label>
+      <input type="date" id="checkout" name="checkout" required>
+
+      <button type="submit" class="btn">Proceed</button>
+    </form>
   </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  © 2025 CityStay Kano | Designed by Amat
-</footer>
-
 </body>
 </html>
